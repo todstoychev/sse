@@ -4,13 +4,17 @@ namespace Todstoychev\SSE;
 
 /**
  * SSETimedEvent
- *
- * @package Todstoychev\SSE
- * @author Todor Todorov <todstoychev@gmail.com>
  **/
 class SSETimedEvent extends SSEEvent
 {
+    /**
+     * @var int
+     */
     public $period = 1;
+
+    /**
+     * @var int
+     */
     private $start = 0;
 
     public function check()
@@ -18,10 +22,11 @@ class SSETimedEvent extends SSEEvent
         if ($this->start === 0) {
             $this->start = time();
         }
+
         if (SSEUtils::timeMod($this->start, $this->period) == 0) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 }

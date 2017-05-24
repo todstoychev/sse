@@ -2,17 +2,9 @@
 
 namespace Todstoychev\SSE;
 
-/*
-* @package libSSE-php
-* @author Licson Lee <licson0729@gmail.com>
-* @description A PHP library for handling Server-Sent Events (SSE)
-*/
-
-/*
-* @class SSEEvent
-* @description The event placeholder class
-*/
-
+/**
+ * Class SSEEvent
+ */
 class SSEEvent
 {
     public function check()
